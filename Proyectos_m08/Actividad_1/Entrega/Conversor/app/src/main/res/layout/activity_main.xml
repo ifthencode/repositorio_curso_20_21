@@ -29,5 +29,84 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="409dp"
+        android:layout_height="513dp"
+        android:layout_marginBottom="160dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
+        <TextView
+            android:id="@+id/textUnittoConvert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="236dp"
+            android:layout_marginBottom="268dp"
+            android:text="@string/unidad_a_convetir"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/textConvertunit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="68dp"
+            android:layout_marginBottom="268dp"
+            android:text="@string/unidad_convertida"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinnerUnitoConvert"
+            android:layout_width="140dp"
+            android:layout_height="18dp"
+            android:layout_marginEnd="224dp"
+            android:layout_marginBottom="220dp"
+            android:entries="@array/ListaValoresAConvertir"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinnerUnitConverted"
+            android:layout_width="140dp"
+            android:layout_height="18dp"
+            android:layout_marginEnd="52dp"
+            android:layout_marginBottom="220dp"
+            android:entries="@array/ListaValoresConvertidos"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="160dp"
+            android:layout_marginBottom="32dp"
+            android:text="@string/button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="142dp"
+            android:layout_height="41dp"
+            android:layout_marginEnd="52dp"
+            android:layout_marginBottom="128dp"
+            android:text="@string/textview"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextNumberDecimal"
+            android:layout_width="142dp"
+            android:layout_height="41dp"
+            android:layout_marginEnd="224dp"
+            android:layout_marginBottom="132dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
