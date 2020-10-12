@@ -46,9 +46,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-
-         textviewResultado=findViewById(R.id.textViewResultado);
-
+        //Declaramos e inicializamos las variables
+        textviewResultado=findViewById(R.id.textViewResultado);
         spinnerConvertir=findViewById(R.id.spinnerUnitoConvert);
         spinnerConvertido=findViewById(R.id.spinnerUnitConverted);
         recibido=findViewById(R.id.editTextNumberDecimal);
@@ -58,15 +57,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //
-
+             //Obtenemos los valores introducidos por el usuario
                 long itemaconvertir = spinnerConvertir.getSelectedItemId();
                 long itemconvertido = spinnerConvertido.getSelectedItemId();
-                //BigInteger bigrecibido;
-              // BigInteger bigresultado = null;
+              //Declaramos e inicializamoss las variables necesarias para los cálculos
                 BigDecimal bigDecimalResultado = null;
                 BigDecimal bigDecimalRecibido;
-                // int posiciones[] = getResources().getIntArray(R.array.listavaloresDatos);
+                //Calculamos la diferencia de posición en la escala de unidades
                 long calculo = itemaconvertir - itemconvertido;
+
+                //Hacemos que salga un mensaje si el usuario no introduce la cantidad a convertir
                 if (recibido.getText().toString().isEmpty()) {
 
                     Toast toast1 =
@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
                     toast1.show();
                 } else {
+                    //Se determina si alguno de los campos de la selección es bit y se calcula en base a esa seleccion
                     if (itemconvertido == 0|itemaconvertir==0) {
                         if (calculo > 0) {
 
@@ -91,13 +92,8 @@ public class MainActivity extends AppCompatActivity {
                                 bigDecimalRecibido =BigDecimal.valueOf( Long.parseLong(textScrito.toString()));
                                 bigDecimalResultado = bigDecimalRecibido.divide(BigDecimal.valueOf(8).multiply(bigDecimalResultado));
 
-
-
-
-
-
                         }
-                        
+                        //Si no se ha seleccionado en bit se calcula en base 1024
                     }else if(itemconvertido >0 ){
                         if (calculo > 0) {
 
