@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="ListaValoresAConvertir">
+    <string-array name="ListaValores">
         <item>Bit</item>
         <item >Byte</item>
         <item>Kilobyte</item>
@@ -14,31 +14,7 @@
         <item>Geobyte</item>
      </string-array>
 
-    <string-array name="ListaValoresConvertidos">
-        <item>Bit</item>
-        <item>Byte</item>
-        <item>Kilobyte</item>
-        <item>Megabyte</item>
-        <item>Gigabyte</item>
-        <item>Terabyte</item>
-        <item>Petabyte</item>
-        <item>Exabyte</item>
-        <item>Zetaxabyte</item>
-        <item>Brontobyte</item>
-        <item>Geobyte</item>
-    </string-array>
-    <integer-array name="listavaloresDatos">
-        <item>1</item>
-        <item>10</item>
-        <item>100</item>
-        <item>1000</item>
-        <item>10000</item>
-        <item>100000</item>
-        <item>1000000</item>
-        <item>10000000</item>
-        <item>100000000</item>
-        <item>1000000000</item>
 
-    </integer-array>
+
 
 </resources>

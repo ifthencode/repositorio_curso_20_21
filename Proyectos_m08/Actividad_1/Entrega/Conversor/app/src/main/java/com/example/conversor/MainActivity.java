@@ -23,6 +23,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -42,15 +44,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Log.d("Demo","**************************************Prueba");
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
+
+
          textviewResultado=findViewById(R.id.textViewResultado);
 
         spinnerConvertir=findViewById(R.id.spinnerUnitoConvert);
@@ -62,11 +58,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //
-                Log.d("Demo2", "jkjkjkj" + String.valueOf(recibido.getText().toString().isEmpty()));
+
                 long itemaconvertir = spinnerConvertir.getSelectedItemId();
                 long itemconvertido = spinnerConvertido.getSelectedItemId();
-                long resultado = 0;
-                long recibidonum = 0;
+                //BigInteger bigrecibido;
+              // BigInteger bigresultado = null;
+                BigDecimal bigDecimalResultado = null;
+                BigDecimal bigDecimalRecibido;
                 // int posiciones[] = getResources().getIntArray(R.array.listavaloresDatos);
                 long calculo = itemaconvertir - itemconvertido;
                 if (recibido.getText().toString().isEmpty()) {
@@ -77,22 +75,52 @@ public class MainActivity extends AppCompatActivity {
 
                     toast1.show();
                 } else {
-                    if (itemconvertido == 0) {
-                        if (calculo >= 1) {
+                    if (itemconvertido == 0|itemaconvertir==0) {
+                        if (calculo > 0) {
 
-                            resultado = (long) Math.pow(1024, calculo);
-                            recibidonum = Long.parseLong(textScrito.toString());
-                            resultado = resultado * recibidonum * 8;
+                            bigDecimalResultado =BigDecimal.valueOf( (long) Math.pow(1000, calculo-1));
+                            bigDecimalRecibido =BigDecimal.valueOf( Long.parseLong(textScrito.toString()));
+                            bigDecimalResultado = bigDecimalResultado.multiply( bigDecimalRecibido.multiply(BigDecimal.valueOf(8)));
 
                         }else if (calculo==0){
-                            recibidonum = Long.parseLong(textScrito.toString());
-                            resultado=recibidonum * 8;
+                            bigDecimalRecibido =BigDecimal.valueOf( Long.parseLong(textScrito.toString()));
+                            bigDecimalResultado=bigDecimalRecibido.multiply(BigDecimal.valueOf(1));
+                        }else if (calculo < 0) {
+
+                                bigDecimalResultado =BigDecimal.valueOf( (long) Math.pow(1000, ((calculo*(-1)-1))));
+                                bigDecimalRecibido =BigDecimal.valueOf( Long.parseLong(textScrito.toString()));
+                                bigDecimalResultado = bigDecimalRecibido.divide(BigDecimal.valueOf(8).multiply(bigDecimalResultado));
+
+
+
+
+
+
                         }
                         
+                    }else if(itemconvertido >0 ){
+                        if (calculo > 0) {
+
+                            bigDecimalResultado =BigDecimal.valueOf( (long) Math.pow(1024, calculo));
+                            bigDecimalRecibido =BigDecimal.valueOf( Long.parseLong(textScrito.toString()));
+                            bigDecimalResultado = bigDecimalResultado.multiply( bigDecimalRecibido);
+
+                        }else if (calculo==0){
+                            bigDecimalRecibido =BigDecimal.valueOf( Long.parseLong(textScrito.toString()));
+                            bigDecimalResultado=bigDecimalRecibido.multiply(BigDecimal.valueOf(1));
+                        } else if (calculo < 0) {
+
+                            bigDecimalResultado =BigDecimal.valueOf( (long) Math.pow(1024, (calculo*(-1))));
+                            bigDecimalRecibido =BigDecimal.valueOf( Long.parseLong(textScrito.toString()));
+                            bigDecimalResultado =  bigDecimalRecibido.divide(bigDecimalResultado);
+
+                        }
+
+
                     }
 
-                    Log.d("DE", String.valueOf(calculo));
-                    textviewResultado.setText(String.valueOf(resultado));
+                    Log.d("Escribir resultado", bigDecimalResultado.toString());
+                    textviewResultado.setText(bigDecimalResultado.toString());
                 }
             }
         });
