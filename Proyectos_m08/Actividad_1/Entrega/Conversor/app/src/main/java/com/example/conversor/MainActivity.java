@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -57,68 +58,104 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //
-             //Obtenemos los valores introducidos por el usuario
+                //Obtenemos los valores introducidos por el usuario
                 long itemaconvertir = spinnerConvertir.getSelectedItemId();
                 long itemconvertido = spinnerConvertido.getSelectedItemId();
-              //Declaramos e inicializamoss las variables necesarias para los cálculos
+                //Declaramos e inicializamoss las variables necesarias para los cálculos
                 BigDecimal bigDecimalResultado = null;
                 BigDecimal bigDecimalRecibido;
                 //Calculamos la diferencia de posición en la escala de unidades
                 long calculo = itemaconvertir - itemconvertido;
+                int calculoInt;
+                Toast toast1;
 
-                //Hacemos que salga un mensaje si el usuario no introduce la cantidad a convertir
-                if (recibido.getText().toString().isEmpty()) {
+                    //Hacemos que salga un mensaje si el usuario no introduce la cantidad a convertir
+                    if (recibido.getText().toString().isEmpty()) {
 
-                    Toast toast1 =
-                            Toast.makeText(getApplicationContext(),
-                                    "Introduce una cantidad a convertir", Toast.LENGTH_SHORT);
+                        toast1 =
+                                Toast.makeText(getApplicationContext(),
+                                        "Introduce una cantidad a convertir", Toast.LENGTH_SHORT);
 
-                    toast1.show();
-                } else {
-                    //Se determina si alguno de los campos de la selección es bit y se calcula en base a esa seleccion
-                    if (itemconvertido == 0|itemaconvertir==0) {
-                        if (calculo > 0) {
+                        toast1.show();
+                    } else {
+                         //Si se  ha seleccionado como origen o destino bit
+                        if (itemconvertido == 0 | itemaconvertir == 0) {
+                            //Se diferencia entre una conversion mayor-menor menor-mayor o igual
+                            if (calculo > 0) {
 
-                            bigDecimalResultado =BigDecimal.valueOf( (long) Math.pow(1000, calculo-1));
-                            bigDecimalRecibido =BigDecimal.valueOf( Long.parseLong(textScrito.toString()));
-                            bigDecimalResultado = bigDecimalResultado.multiply( bigDecimalRecibido.multiply(BigDecimal.valueOf(8)));
 
-                        }else if (calculo==0){
-                            bigDecimalRecibido =BigDecimal.valueOf( Long.parseLong(textScrito.toString()));
-                            bigDecimalResultado=bigDecimalRecibido.multiply(BigDecimal.valueOf(1));
-                        }else if (calculo < 0) {
+                               calculoInt=(int) calculo;
+                                //Para realizar el cálculo de la potencia se llama al método calcular()
+                             //Se calculan los bytes primero y si el destino de la conversion es otra se multiplica /divide por 1024
+                                bigDecimalRecibido = BigDecimal.valueOf(Double.parseDouble(textScrito.toString()));
+                                bigDecimalResultado = bigDecimalRecibido;
+                                bigDecimalResultado = bigDecimalResultado.multiply(BigDecimal.valueOf(8));
+                                if(itemaconvertir>1){
+                                    calculoInt=(int) (calculo-1);
+                                    BigDecimal temp;
+                                    temp=calcular(calculoInt,1024);
 
-                                bigDecimalResultado =BigDecimal.valueOf( (long) Math.pow(1000, ((calculo*(-1)-1))));
-                                bigDecimalRecibido =BigDecimal.valueOf( Long.parseLong(textScrito.toString()));
-                                bigDecimalResultado = bigDecimalRecibido.divide(BigDecimal.valueOf(8).multiply(bigDecimalResultado));
+                                    bigDecimalResultado = bigDecimalResultado.multiply(temp);
+
+
+                                }
+                            } else if (calculo == 0) {
+                                bigDecimalRecibido = BigDecimal.valueOf(Double.parseDouble(textScrito.toString()));
+                                bigDecimalResultado = bigDecimalRecibido.multiply(BigDecimal.valueOf(1));
+                            } else if (calculo < 0) {
+
+
+                                calculoInt=(int) (calculo*-1);
+                                bigDecimalRecibido = BigDecimal.valueOf(Double.parseDouble(textScrito.toString()));
+
+
+                                bigDecimalResultado = bigDecimalRecibido;
+                                bigDecimalResultado = bigDecimalResultado.divide(BigDecimal.valueOf(8));
+
+                                 if(itemconvertido>1){
+                                     calculoInt=(int) (calculo*-1)-1;
+                                     BigDecimal temp;
+                                     temp=calcular(calculoInt,1024);
+
+                                     bigDecimalResultado = bigDecimalResultado.divide(temp);
+
+                                 }
+
+                            }
+                            //Se diferencia entre una conversion mayor-menor menor-mayor o igual
+
+                            //si no se ha seleccionado como origen o destino bit
+                        } else if (itemconvertido > 0) {
+                            if (calculo > 0) {
+
+
+                                 calculoInt=(int) calculo;
+                                bigDecimalResultado=calcular(calculoInt,1024);
+                                bigDecimalRecibido = BigDecimal.valueOf(Double.parseDouble(textScrito.toString()));
+                                bigDecimalResultado = bigDecimalResultado.multiply(bigDecimalRecibido);
+
+                            } else if (calculo == 0) {
+                                bigDecimalRecibido = BigDecimal.valueOf(Double.parseDouble(textScrito.toString()));
+                                bigDecimalResultado = bigDecimalRecibido.multiply(BigDecimal.valueOf(1));
+                            } else if (calculo < 0) {
+
+                               // bigDecimalResultado = BigDecimal.valueOf((long) Math.pow(1024, (calculo * (-1))));
+                               calculoInt=(int) (calculo*-1);
+                                bigDecimalResultado=calcular(calculoInt,1024);
+                                bigDecimalRecibido = BigDecimal.valueOf(Double.parseDouble(textScrito.toString()));
+                                bigDecimalResultado = bigDecimalRecibido.divide(bigDecimalResultado);
+
+                            }
+
 
                         }
-                        //Si no se ha seleccionado en bit se calcula en base 1024
-                    }else if(itemconvertido >0 ){
-                        if (calculo > 0) {
-
-                            bigDecimalResultado =BigDecimal.valueOf( (long) Math.pow(1024, calculo));
-                            bigDecimalRecibido =BigDecimal.valueOf( Long.parseLong(textScrito.toString()));
-                            bigDecimalResultado = bigDecimalResultado.multiply( bigDecimalRecibido);
-
-                        }else if (calculo==0){
-                            bigDecimalRecibido =BigDecimal.valueOf( Long.parseLong(textScrito.toString()));
-                            bigDecimalResultado=bigDecimalRecibido.multiply(BigDecimal.valueOf(1));
-                        } else if (calculo < 0) {
-
-                            bigDecimalResultado =BigDecimal.valueOf( (long) Math.pow(1024, (calculo*(-1))));
-                            bigDecimalRecibido =BigDecimal.valueOf( Long.parseLong(textScrito.toString()));
-                            bigDecimalResultado =  bigDecimalRecibido.divide(bigDecimalResultado);
-
-                        }
 
 
+                        Log.d("Escribir resultado", bigDecimalResultado.toString());
+                        textviewResultado.setText(bigDecimalResultado.toEngineeringString()+" "+spinnerConvertido.getSelectedItem()+"´s");
                     }
-
-                    Log.d("Escribir resultado", bigDecimalResultado.toString());
-                    textviewResultado.setText(bigDecimalResultado.toString());
                 }
-            }
+
         });
 
     }
@@ -146,5 +183,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public BigDecimal calcular(int calculo, int base){
+        BigDecimal num=BigDecimal.valueOf(1);
+        for(int i=0;i<calculo;i++){
+
+            num=num.multiply(BigDecimal.valueOf(base));
+
+        }
+        return num;
     }
 }
