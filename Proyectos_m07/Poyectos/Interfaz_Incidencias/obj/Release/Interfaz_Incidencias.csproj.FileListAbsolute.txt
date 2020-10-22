@@ -1,0 +1,12 @@
+E:\Proyectos_curso_20_21\Proyectos_m07\Poyectos\Interfaz_Incidencias\bin\Release\Interfaz_Incidencias.exe.config
+E:\Proyectos_curso_20_21\Proyectos_m07\Poyectos\Interfaz_Incidencias\bin\Release\Interfaz_Incidencias.exe
+E:\Proyectos_curso_20_21\Proyectos_m07\Poyectos\Interfaz_Incidencias\bin\Release\Interfaz_Incidencias.pdb
+E:\Proyectos_curso_20_21\Proyectos_m07\Poyectos\Interfaz_Incidencias\obj\Release\Interfaz_Incidencias.csprojAssemblyReference.cache
+E:\Proyectos_curso_20_21\Proyectos_m07\Poyectos\Interfaz_Incidencias\obj\Release\Interfaz_Incidencias.AgregadorIncidencias.resources
+E:\Proyectos_curso_20_21\Proyectos_m07\Poyectos\Interfaz_Incidencias\obj\Release\Interfaz_Incidencias.ModificarIncidencia.resources
+E:\Proyectos_curso_20_21\Proyectos_m07\Poyectos\Interfaz_Incidencias\obj\Release\Interfaz_Incidencias.Incidencias.resources
+E:\Proyectos_curso_20_21\Proyectos_m07\Poyectos\Interfaz_Incidencias\obj\Release\Interfaz_Incidencias.Properties.Resources.resources
+E:\Proyectos_curso_20_21\Proyectos_m07\Poyectos\Interfaz_Incidencias\obj\Release\Interfaz_Incidencias.csproj.GenerateResource.cache
+E:\Proyectos_curso_20_21\Proyectos_m07\Poyectos\Interfaz_Incidencias\obj\Release\Interfaz_Incidencias.csproj.CoreCompileInputs.cache
+E:\Proyectos_curso_20_21\Proyectos_m07\Poyectos\Interfaz_Incidencias\obj\Release\Interfaz_Incidencias.exe
+E:\Proyectos_curso_20_21\Proyectos_m07\Poyectos\Interfaz_Incidencias\obj\Release\Interfaz_Incidencias.pdb

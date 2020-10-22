@@ -32,15 +32,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbTipo = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxAsunto = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbEstadoIncidencia = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtApertura = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtCierre = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -71,20 +72,22 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Descripción de la Incidencia";
             // 
-            // textBox1
+            // textBoxAsunto
             // 
-            this.textBox1.Location = new System.Drawing.Point(23, 254);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(225, 114);
-            this.textBox1.TabIndex = 3;
+            this.textBoxAsunto.Location = new System.Drawing.Point(23, 254);
+            this.textBoxAsunto.MaxLength = 25;
+            this.textBoxAsunto.Multiline = true;
+            this.textBoxAsunto.Name = "textBoxAsunto";
+            this.textBoxAsunto.Size = new System.Drawing.Size(225, 114);
+            this.textBoxAsunto.TabIndex = 3;
+            this.textBoxAsunto.TextChanged += new System.EventHandler(this.textBoxAsunto_TextChanged);
             // 
-            // textBox2
+            // textBoxEmail
             // 
-            this.textBox2.Location = new System.Drawing.Point(306, 141);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(185, 20);
-            this.textBox2.TabIndex = 4;
+            this.textBoxEmail.Location = new System.Drawing.Point(306, 141);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(185, 20);
+            this.textBoxEmail.TabIndex = 4;
             // 
             // label3
             // 
@@ -107,7 +110,7 @@
             // cbEstadoIncidencia
             // 
             this.cbEstadoIncidencia.FormattingEnabled = true;
-            this.cbEstadoIncidencia.Location = new System.Drawing.Point(609, 141);
+            this.cbEstadoIncidencia.Location = new System.Drawing.Point(602, 141);
             this.cbEstadoIncidencia.Name = "cbEstadoIncidencia";
             this.cbEstadoIncidencia.Size = new System.Drawing.Size(121, 21);
             this.cbEstadoIncidencia.TabIndex = 7;
@@ -122,12 +125,12 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Fecha Apertura Incidencia";
             // 
-            // dateTimePicker1
+            // dtApertura
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(306, 251);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 9;
+            this.dtApertura.Location = new System.Drawing.Point(306, 251);
+            this.dtApertura.Name = "dtApertura";
+            this.dtApertura.Size = new System.Drawing.Size(200, 20);
+            this.dtApertura.TabIndex = 9;
             // 
             // label6
             // 
@@ -138,12 +141,22 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Fecha cierre de la Incidencia";
             // 
-            // dateTimePicker2
+            // dtCierre
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(569, 251);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 11;
+            this.dtCierre.Location = new System.Drawing.Point(569, 251);
+            this.dtCierre.Name = "dtCierre";
+            this.dtCierre.Size = new System.Drawing.Size(200, 20);
+            this.dtCierre.TabIndex = 11;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(510, 345);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Guardar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AgregadorIncidencias
             // 
@@ -151,15 +164,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dtCierre);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtApertura);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbEstadoIncidencia);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxEmail);
+            this.Controls.Add(this.textBoxAsunto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbTipo);
             this.Controls.Add(this.label1);
@@ -177,14 +191,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbTipo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxAsunto;
+        private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbEstadoIncidencia;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtApertura;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtCierre;
+        private System.Windows.Forms.Button button1;
     }
 }

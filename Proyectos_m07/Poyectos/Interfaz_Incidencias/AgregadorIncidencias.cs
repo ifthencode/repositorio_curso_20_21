@@ -23,9 +23,11 @@ namespace Interfaz_Incidencias
             "En proceso",
             "Cerrada"
             };
-        public AgregadorIncidencias()
+        ListView lista;
+        public AgregadorIncidencias(ListView lv)
         {
             InitializeComponent();
+            lista = lv;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -56,6 +58,47 @@ namespace Interfaz_Incidencias
         }
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String comprobar = comprobarVacio();
+            if (comprobar.Equals("NOOK"))
+            {
+                MessageBox.Show("Los campos ,tipo,asunto, email y estado son obligatorios ");
+
+            }
+            else
+            {
+                ListViewItem item = new ListViewItem();
+                String fechaApertura = dtApertura.Value.ToString();
+                String fechaCierre = dtCierre.Value.ToString();
+                item.SubItems.Add(cbTipo.Text);
+                item.SubItems.Add(textBoxAsunto.Text);
+                item.SubItems.Add(textBoxEmail.Text);
+                item.SubItems.Add(cbEstadoIncidencia.Text);
+                item.SubItems.Add(fechaApertura);
+                item.SubItems.Add("");
+                lista.Items.Insert(0, item);
+                this.Close();
+            }
+           
+        }
+
+        private string comprobarVacio() {
+            if (cbTipo.SelectedIndex == 0 | textBoxAsunto.Text.Equals("") | textBoxEmail.Text.Equals("")| cbEstadoIncidencia.SelectedIndex == 0)
+            {
+                return "NOOK";
+
+            }
+            else { return "OK"; };
+
+            
+        }
+
+        private void textBoxAsunto_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -9,3 +9,4 @@ E:\Proyectos_curso_20_21\Proyectos_m07\Poyectos\Interfaz_Incidencias\obj\Debug\I
 E:\Proyectos_curso_20_21\Proyectos_m07\Poyectos\Interfaz_Incidencias\obj\Debug\Interfaz_Incidencias.pdb
 E:\Proyectos_curso_20_21\Proyectos_m07\Poyectos\Interfaz_Incidencias\obj\Debug\Interfaz_Incidencias.Incidencias.resources
 E:\Proyectos_curso_20_21\Proyectos_m07\Poyectos\Interfaz_Incidencias\obj\Debug\Interfaz_Incidencias.AgregadorIncidencias.resources
+E:\Proyectos_curso_20_21\Proyectos_m07\Poyectos\Interfaz_Incidencias\obj\Debug\Interfaz_Incidencias.ModificarIncidencia.resources

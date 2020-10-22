@@ -31,13 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Incidencias));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestiónDeIncidenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevaIncidenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listarIncidenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarIncidenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.nuevaIncidencia = new System.Windows.Forms.Button();
@@ -47,9 +40,13 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.lvIncidencias = new System.Windows.Forms.ListView();
-            this.icono = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Minuto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Descripcion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.vacia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clTipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clAsunto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clEstado = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clApertura = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clCierre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.deshacerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rehacerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -61,8 +58,6 @@
             this.personalizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -83,67 +78,10 @@
             // 
             // flowLayoutPanel3
             // 
-            this.flowLayoutPanel3.Controls.Add(this.menuStrip1);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(1119, 34);
             this.flowLayoutPanel3.TabIndex = 3;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivoToolStripMenuItem,
-            this.gestiónDeIncidenciasToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(379, 29);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // archivoToolStripMenuItem
-            // 
-            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.salirToolStripMenuItem});
-            this.archivoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(75, 25);
-            this.archivoToolStripMenuItem.Text = "&Archivo";
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(111, 26);
-            this.salirToolStripMenuItem.Text = "&Salir";
-            // 
-            // gestiónDeIncidenciasToolStripMenuItem
-            // 
-            this.gestiónDeIncidenciasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevaIncidenciaToolStripMenuItem,
-            this.listarIncidenciasToolStripMenuItem,
-            this.modificarIncidenciaToolStripMenuItem});
-            this.gestiónDeIncidenciasToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gestiónDeIncidenciasToolStripMenuItem.Name = "gestiónDeIncidenciasToolStripMenuItem";
-            this.gestiónDeIncidenciasToolStripMenuItem.Size = new System.Drawing.Size(176, 25);
-            this.gestiónDeIncidenciasToolStripMenuItem.Text = "Gestión de Incidencias";
-            // 
-            // nuevaIncidenciaToolStripMenuItem
-            // 
-            this.nuevaIncidenciaToolStripMenuItem.Name = "nuevaIncidenciaToolStripMenuItem";
-            this.nuevaIncidenciaToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
-            this.nuevaIncidenciaToolStripMenuItem.Text = "Nueva Incidencia";
-            this.nuevaIncidenciaToolStripMenuItem.Click += new System.EventHandler(this.nuevaIncidenciaToolStripMenuItem_Click);
-            // 
-            // listarIncidenciasToolStripMenuItem
-            // 
-            this.listarIncidenciasToolStripMenuItem.Name = "listarIncidenciasToolStripMenuItem";
-            this.listarIncidenciasToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
-            this.listarIncidenciasToolStripMenuItem.Text = "Listar Incidencias";
-            // 
-            // modificarIncidenciaToolStripMenuItem
-            // 
-            this.modificarIncidenciaToolStripMenuItem.Name = "modificarIncidenciaToolStripMenuItem";
-            this.modificarIncidenciaToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
-            this.modificarIncidenciaToolStripMenuItem.Text = "Modificar Incidencia";
             // 
             // flowLayoutPanel2
             // 
@@ -159,7 +97,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.26559F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.73441F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 345F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 347F));
             this.tableLayoutPanel2.Controls.Add(this.nuevaIncidencia, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.button2, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.button3, 2, 0);
@@ -178,7 +116,7 @@
             this.nuevaIncidencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nuevaIncidencia.Location = new System.Drawing.Point(3, 3);
             this.nuevaIncidencia.Name = "nuevaIncidencia";
-            this.nuevaIncidencia.Size = new System.Drawing.Size(341, 23);
+            this.nuevaIncidencia.Size = new System.Drawing.Size(340, 23);
             this.nuevaIncidencia.TabIndex = 0;
             this.nuevaIncidencia.Text = "Nueva Incidencia";
             this.nuevaIncidencia.UseVisualStyleBackColor = true;
@@ -190,12 +128,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(350, 3);
+            this.button2.Location = new System.Drawing.Point(349, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(414, 23);
+            this.button2.Size = new System.Drawing.Size(413, 23);
             this.button2.TabIndex = 1;
             this.button2.Text = "Modificar Incidencia";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -203,19 +142,20 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(770, 3);
+            this.button3.Location = new System.Drawing.Point(768, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(340, 23);
+            this.button3.Size = new System.Drawing.Size(342, 23);
             this.button3.TabIndex = 2;
             this.button3.Text = "Eliminar Incidencia";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.2525F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.7475F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 214F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 216F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 38);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -230,14 +170,14 @@
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.67616F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 89.32384F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 86F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
             this.tableLayoutPanel3.Controls.Add(this.label1, 1, 1);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(247, 54);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.91304F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.08696F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(648, 46);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(646, 46);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // label1
@@ -245,7 +185,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(208, 15);
+            this.label1.Location = new System.Drawing.Point(205, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(205, 25);
             this.label1.TabIndex = 0;
@@ -254,34 +194,66 @@
             // lvIncidencias
             // 
             this.lvIncidencias.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.icono,
-            this.Minuto,
-            this.Descripcion});
+            this.vacia,
+            this.clTipo,
+            this.clAsunto,
+            this.clEmail,
+            this.clEstado,
+            this.clApertura,
+            this.clCierre});
             this.lvIncidencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvIncidencias.FullRowSelect = true;
             this.lvIncidencias.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvIncidencias.HideSelection = false;
+            this.lvIncidencias.LabelWrap = false;
             this.lvIncidencias.Location = new System.Drawing.Point(3, 214);
             this.lvIncidencias.Name = "lvIncidencias";
-            this.lvIncidencias.Size = new System.Drawing.Size(1116, 534);
+            this.lvIncidencias.Size = new System.Drawing.Size(1119, 534);
             this.lvIncidencias.TabIndex = 4;
             this.lvIncidencias.UseCompatibleStateImageBehavior = false;
             this.lvIncidencias.View = System.Windows.Forms.View.Details;
+            this.lvIncidencias.SelectedIndexChanged += new System.EventHandler(this.lvIncidencias_SelectedIndexChanged);
             // 
-            // icono
+            // vacia
             // 
-            this.icono.Text = "";
-            this.icono.Width = 44;
+            this.vacia.Text = "";
+            this.vacia.Width = 20;
             // 
-            // Minuto
+            // clTipo
             // 
-            this.Minuto.Text = "Min.";
-            this.Minuto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Minuto.Width = 61;
+            this.clTipo.Text = "Tipo";
+            this.clTipo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clTipo.Width = 96;
             // 
-            // Descripcion
+            // clAsunto
             // 
-            this.Descripcion.Text = "Evento";
-            this.Descripcion.Width = 367;
+            this.clAsunto.Text = "Asunto";
+            this.clAsunto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clAsunto.Width = 336;
+            // 
+            // clEmail
+            // 
+            this.clEmail.Text = "Email";
+            this.clEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clEmail.Width = 179;
+            // 
+            // clEstado
+            // 
+            this.clEstado.Text = "Estado";
+            this.clEstado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clEstado.Width = 155;
+            // 
+            // clApertura
+            // 
+            this.clApertura.Text = "Fecha apertura";
+            this.clApertura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clApertura.Width = 161;
+            // 
+            // clCierre
+            // 
+            this.clCierre.Text = "Fecha Cierre";
+            this.clCierre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clCierre.Width = 177;
             // 
             // deshacerToolStripMenuItem
             // 
@@ -364,10 +336,6 @@
             this.Text = "Incidencias";
             this.Load += new System.EventHandler(this.Incidencias_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel3.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -391,17 +359,7 @@
         private System.Windows.Forms.ToolStripMenuItem personalizarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem opcionesToolStripMenuItem;
         private System.Windows.Forms.ListView lvIncidencias;
-        private System.Windows.Forms.ColumnHeader icono;
-        private System.Windows.Forms.ColumnHeader Minuto;
-        private System.Windows.Forms.ColumnHeader Descripcion;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestiónDeIncidenciasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nuevaIncidenciaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listarIncidenciasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarIncidenciaToolStripMenuItem;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -410,6 +368,13 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ColumnHeader clTipo;
+        private System.Windows.Forms.ColumnHeader vacia;
+        private System.Windows.Forms.ColumnHeader clAsunto;
+        private System.Windows.Forms.ColumnHeader clEmail;
+        private System.Windows.Forms.ColumnHeader clEstado;
+        private System.Windows.Forms.ColumnHeader clApertura;
+        private System.Windows.Forms.ColumnHeader clCierre;
     }
 }
 
