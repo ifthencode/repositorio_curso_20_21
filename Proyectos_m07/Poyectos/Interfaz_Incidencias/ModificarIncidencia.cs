@@ -60,31 +60,43 @@ namespace Interfaz_Incidencias
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String fechaCierre = dtCierre.Value.ToString();
-            ListViewItem item = new ListViewItem();
-            ListViewItem itemr = lista.SelectedItems[0];
-            int posicion = lista.SelectedIndices.Count;
-            int numero = 0;
-            foreach (ListViewItem iteml in lista.Items) {
+            String comprobar = comprobarVacio();
 
-                
-                if (iteml == itemr) {
+            if (comprobar.Equals("NOOK"))
+            {
+                MessageBox.Show("Los campos ,tipo,asunto, email y estado son obligatorios ");
 
-                    posicion = numero;
-
-                        };
-                numero++;
             }
+            else
+            {
+                String fechaCierre = dtCierre.Value.ToString();
+                ListViewItem item = new ListViewItem();
+                ListViewItem itemr = lista.SelectedItems[0];
+                int posicion = lista.SelectedIndices.Count;
+                int numero = 0;
+                foreach (ListViewItem iteml in lista.Items)
+                {
 
-            item.SubItems.Add(lista.SelectedItems[0].SubItems[1].Text);
-            item.SubItems.Add(lista.SelectedItems[0].SubItems[2].Text);
-            item.SubItems.Add(tbEmail.Text);
-            item.SubItems.Add(cbEstadoIncidencia.Text);
-            item.SubItems.Add(lista.SelectedItems[0].SubItems[5].Text);
-            item.SubItems.Add(fechaCierre);
-            lista.Items.Remove(itemr);
-            lista.Items.Insert(posicion, item);
-            this.Close();
+
+                    if (iteml == itemr)
+                    {
+
+                        posicion = numero;
+
+                    };
+                    numero++;
+                }
+
+                item.SubItems.Add(lista.SelectedItems[0].SubItems[1].Text);
+                item.SubItems.Add(lista.SelectedItems[0].SubItems[2].Text);
+                item.SubItems.Add(tbEmail.Text);
+                item.SubItems.Add(cbEstadoIncidencia.Text);
+                item.SubItems.Add(lista.SelectedItems[0].SubItems[5].Text);
+                item.SubItems.Add(fechaCierre);
+                lista.Items.Remove(itemr);
+                lista.Items.Insert(posicion, item);
+                this.Close();
+            }
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -105,6 +117,17 @@ namespace Interfaz_Incidencias
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+
+        }
+        private string comprobarVacio()
+        {
+            if (cbEstadoIncidencia.SelectedIndex == 0)
+            {
+                return "NOOK";
+
+            }
+            else { return "OK"; };
+
 
         }
     }

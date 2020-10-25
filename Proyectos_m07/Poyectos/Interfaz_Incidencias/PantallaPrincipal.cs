@@ -67,7 +67,7 @@ namespace Interfaz_Incidencias
             try
             {
                  
-                if (lvIncidencias.SelectedItems[0].Selected)
+                if (lvIncidencias.SelectedItems.Count>0)
                 {
                     estado = lvIncidencias.SelectedItems[0].SubItems[4].Text;
                 

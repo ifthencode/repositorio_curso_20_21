@@ -116,6 +116,7 @@
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ModificarIncidencia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Incidencia";
             this.Load += new System.EventHandler(this.ModificarIncidencia_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);

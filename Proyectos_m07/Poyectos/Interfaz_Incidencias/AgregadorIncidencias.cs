@@ -74,7 +74,7 @@ namespace Interfaz_Incidencias
             {
                 ListViewItem item = new ListViewItem();
                 String fechaApertura = dtApertura.Value.ToString();
-                String fechaCierre = dtCierre.Value.ToString();
+               // String fechaCierre = dtCierre.Value.ToString();
                 item.SubItems.Add(cbTipo.Text);
                 item.SubItems.Add(textBoxAsunto.Text);
                 item.SubItems.Add(textBoxEmail.Text);

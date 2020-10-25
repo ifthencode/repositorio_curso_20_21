@@ -39,8 +39,6 @@
             this.cbEstadoIncidencia = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dtApertura = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dtCierre = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -56,7 +54,7 @@
             // 
             // cbTipo
             // 
-            this.cbTipo.FormattingEnabled = true;
+            this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipo.Location = new System.Drawing.Point(59, 141);
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(121, 21);
@@ -109,7 +107,7 @@
             // 
             // cbEstadoIncidencia
             // 
-            this.cbEstadoIncidencia.FormattingEnabled = true;
+            this.cbEstadoIncidencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEstadoIncidencia.Location = new System.Drawing.Point(602, 141);
             this.cbEstadoIncidencia.Name = "cbEstadoIncidencia";
             this.cbEstadoIncidencia.Size = new System.Drawing.Size(121, 21);
@@ -119,7 +117,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(330, 218);
+            this.label5.Location = new System.Drawing.Point(496, 218);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(132, 13);
             this.label5.TabIndex = 8;
@@ -127,30 +125,14 @@
             // 
             // dtApertura
             // 
-            this.dtApertura.Location = new System.Drawing.Point(306, 251);
+            this.dtApertura.Location = new System.Drawing.Point(447, 254);
             this.dtApertura.Name = "dtApertura";
             this.dtApertura.Size = new System.Drawing.Size(200, 20);
             this.dtApertura.TabIndex = 9;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(595, 218);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(144, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Fecha cierre de la Incidencia";
-            // 
-            // dtCierre
-            // 
-            this.dtCierre.Location = new System.Drawing.Point(569, 251);
-            this.dtCierre.Name = "dtCierre";
-            this.dtCierre.Size = new System.Drawing.Size(200, 20);
-            this.dtCierre.TabIndex = 11;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(510, 345);
+            this.button1.Location = new System.Drawing.Point(499, 345);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 12;
@@ -162,11 +144,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dtCierre);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.dtApertura);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbEstadoIncidencia);
@@ -179,6 +159,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AgregadorIncidencias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregación de Incidencias";
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.ResumeLayout(false);
@@ -198,8 +179,6 @@
         private System.Windows.Forms.ComboBox cbEstadoIncidencia;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtApertura;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dtCierre;
         private System.Windows.Forms.Button button1;
     }
 }
