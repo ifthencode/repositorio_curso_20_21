@@ -19,4 +19,50 @@
         <item>1048576</item>
         <item>1073741824</item>
     </integer-array>
+    <string-array name="listaUnidades_peso">
+        <item>Miligramo</item>
+        <item>Gramo</item>
+        <item>Kilogramo</item>
+        <item>Tonelada</item>
+    </string-array>
+    <string-array name="listaUnidades_longitud">
+        <item>Milimetro</item>
+        <item>Centímetro</item>
+        <item>Metro</item>
+        <item>Kilometro</item>
+    </string-array>
+    <string-array name="listaUnidades_capacidad">
+        <item>Mililitro</item>
+        <item>Decilitro</item>
+        <item>litro</item>
+        <item>Hectolitro</item>
+    </string-array>
+    <string-array name="listaUnidades_temperatura">
+        <item>Celsius</item>
+        <item>Centigrados</item>
+    </string-array>
+    <integer-array name="valorUnidades_peso">
+        <item>1</item>
+        <item>1000</item>
+        <item>1000000</item>
+        <item>1000000000</item>
+    </integer-array>
+    <integer-array name="valorUnidades_longitud">
+        <item>1</item>
+        <item>100</item>
+        <item>1000</item>
+        <item>1000000</item>
+    </integer-array>
+    <integer-array name="valorUnidades_capacidad">
+        <item>1</item>
+        <item>10</item>
+        <item>1000</item>
+        <item>100000</item>
+    </integer-array>
+    <integer-array name="valorUnidades_temperatura">
+        <item>1</item>
+        <item>10</item>
+        <item>1000</item>
+        <item>100000</item>
+    </integer-array>
 </resources>

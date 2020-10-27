@@ -6,6 +6,9 @@
     <string name="txv_resultado">-----------------------------</string>
     <string name="default_editText"></string>
     <string name="txv_principal">Selecciona la medida...</string>
-    <string name="txt_origen">Unidad Inicial</string>
-    <string name="txv_destino">Unidad Final</string>
+    <string name="txt_origen">Convertir...</string>
+    <string name="txv_destino">Selecciona ...</string>
+    <string name="txv_cantidad">Introduce la cantidad a convertir</string>
+    <string name="txv_a">a...</string>
+    <string name="txv_vacio">"|----------->"</string>
 </resources>
