@@ -39,7 +39,8 @@
     </string-array>
     <string-array name="listaUnidades_temperatura">
         <item>Celsius</item>
-        <item>Centigrados</item>
+        <item>Fahrenheit</item>
+        <item>Kelvin</item>
     </string-array>
     <integer-array name="valorUnidades_peso">
         <item>1</item>
@@ -59,10 +60,5 @@
         <item>1000</item>
         <item>100000</item>
     </integer-array>
-    <integer-array name="valorUnidades_temperatura">
-        <item>1</item>
-        <item>10</item>
-        <item>1000</item>
-        <item>100000</item>
-    </integer-array>
+
 </resources>

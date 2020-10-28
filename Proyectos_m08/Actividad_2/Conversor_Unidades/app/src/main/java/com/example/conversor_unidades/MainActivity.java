@@ -23,13 +23,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-      //  Button botonSiguiente=findViewById(R.id.bt_siguiente);
-      //  botonSiguiente.setOnClickListener(new View.OnClickListener(){
-       //     @Override
-       //     public void onClick(View v) {
-        //    sendMessage(v);
-       //     }
-     //   });
+
         Resources res = getResources();
         listview=findViewById(R.id.lvprincipal);
         names =res.getStringArray(R.array.ListaMedidas);
@@ -40,14 +34,14 @@ public class MainActivity extends AppCompatActivity {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
         @Override
        public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-            // Toast.makeText(MainActivity.this, "Has pulsado: "+ names.get(position), Toast.LENGTH_LONG).show();
+
             sendMessage(view,position);
         }
   });
     }
     public void sendMessage(View view,int position) {
         Intent intent = new Intent(this, Pantalla_2.class);
-       // Spinner sp = findViewById(R.id.sp_principal);
+
          String message = names[position];
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
