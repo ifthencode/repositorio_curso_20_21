@@ -55,7 +55,7 @@ namespace Interfaz_Incidencias
         {
             email = lista.SelectedItems[0].SubItems[3].Text;
             rellenar(cbEstadoIncidencia, estado, estadoIncidencia);
-            tbEmail.Text = email;
+            tbEmailPantallaModificar.Text = email;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -89,7 +89,7 @@ namespace Interfaz_Incidencias
 
                 item.SubItems.Add(lista.SelectedItems[0].SubItems[1].Text);
                 item.SubItems.Add(lista.SelectedItems[0].SubItems[2].Text);
-                item.SubItems.Add(tbEmail.Text);
+                item.SubItems.Add(tbEmailPantallaModificar.Text);
                 item.SubItems.Add(cbEstadoIncidencia.Text);
                 item.SubItems.Add(lista.SelectedItems[0].SubItems[5].Text);
                 item.SubItems.Add(fechaCierre);

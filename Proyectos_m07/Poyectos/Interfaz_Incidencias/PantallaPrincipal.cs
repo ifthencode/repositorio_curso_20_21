@@ -54,9 +54,8 @@ namespace Interfaz_Incidencias
            
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e) {
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -94,22 +93,31 @@ namespace Interfaz_Incidencias
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ListViewItem itemr = lvIncidencias.SelectedItems[0];
-            int posicion=0;
+           
+            int posicion = 0;
             int numero = 0;
-            foreach (ListViewItem iteml in lvIncidencias.Items)
+
+            if (lvIncidencias.SelectedItems.Count > 0)
             {
-
-
-                if (iteml == itemr)
+                ListViewItem itemr = lvIncidencias.SelectedItems[0];
+                foreach (ListViewItem iteml in lvIncidencias.Items)
                 {
 
-                    posicion = numero;
 
-                };
-                numero++;
+                    if (iteml == itemr)
+                    {
+
+                        posicion = numero;
+
+                    };
+                    numero++;
+                }
+                lvIncidencias.Items.RemoveAt(posicion);
             }
-            lvIncidencias.Items.RemoveAt(posicion);
+            else {
+                MessageBox.Show("Debe seleccionar una incidencia ");
+
+            }
         }
     }
 }

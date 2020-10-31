@@ -76,19 +76,21 @@ namespace Interfaz_Incidencias
                 String fechaApertura = dtApertura.Value.ToString();
                // String fechaCierre = dtCierre.Value.ToString();
                 item.SubItems.Add(cbTipo.Text);
-                item.SubItems.Add(textBoxAsunto.Text);
-                item.SubItems.Add(textBoxEmail.Text);
+                item.SubItems.Add(tbAsunto.Text);
+                item.SubItems.Add(tBEmailPantallaAgreqar.Text);
                 item.SubItems.Add(cbEstadoIncidencia.Text);
                 item.SubItems.Add(fechaApertura);
                 item.SubItems.Add("");
                 lista.Items.Insert(0, item);
+                lista.GridLines = true;
                 this.Close();
+                
             }
            
         }
 
         private string comprobarVacio() {
-            if (cbTipo.SelectedIndex == 0 | textBoxAsunto.Text.Equals("") | textBoxEmail.Text.Equals("")| cbEstadoIncidencia.SelectedIndex == 0)
+            if (cbTipo.SelectedIndex == 0 | tbAsunto.Text.Equals("") | tBEmailPantallaAgreqar.Text.Equals("")| cbEstadoIncidencia.SelectedIndex == 0)
             {
                 return "NOOK";
 
@@ -99,6 +101,11 @@ namespace Interfaz_Incidencias
         }
 
         private void textBoxAsunto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

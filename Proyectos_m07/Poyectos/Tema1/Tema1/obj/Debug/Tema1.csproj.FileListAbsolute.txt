@@ -1,0 +1,10 @@
+C:\Users\david\source\repos\Tema1\Tema1\bin\Debug\Tema1.exe.config
+C:\Users\david\source\repos\Tema1\Tema1\bin\Debug\Tema1.exe
+C:\Users\david\source\repos\Tema1\Tema1\bin\Debug\Tema1.pdb
+C:\Users\david\source\repos\Tema1\Tema1\obj\Debug\Tema1.csprojResolveAssemblyReference.cache
+C:\Users\david\source\repos\Tema1\Tema1\obj\Debug\Tema1.Form1.resources
+C:\Users\david\source\repos\Tema1\Tema1\obj\Debug\Tema1.Properties.Resources.resources
+C:\Users\david\source\repos\Tema1\Tema1\obj\Debug\Tema1.csproj.GenerateResource.Cache
+C:\Users\david\source\repos\Tema1\Tema1\obj\Debug\Tema1.csproj.CoreCompileInputs.cache
+C:\Users\david\source\repos\Tema1\Tema1\obj\Debug\Tema1.exe
+C:\Users\david\source\repos\Tema1\Tema1\obj\Debug\Tema1.pdb
