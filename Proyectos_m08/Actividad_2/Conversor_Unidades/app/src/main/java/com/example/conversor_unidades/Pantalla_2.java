@@ -34,7 +34,7 @@ public class Pantalla_2 extends AppCompatActivity {
 
         final String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         int vista=0;
-
+       //En función de la selección en la pantalla uno cargo los valores correspondientes en los spinners
         switch(message){
              case "Datos":
              vista=R.array.ListaUnidades_datos;
@@ -63,6 +63,8 @@ public class Pantalla_2 extends AppCompatActivity {
 
                 break;
         }
+
+        //Inicio las variables necesarias
          origen=findViewById(R.id.spinner_origen);
          destino=findViewById(R.id.spinner_destino);
         ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this,vista,android.R.layout.simple_spinner_item);
@@ -73,7 +75,7 @@ public class Pantalla_2 extends AppCompatActivity {
         botonConvertir.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
+                //Al pulsar el boton compruebo si se ha introducido una cantidad, si se ha introduciod ejecuto la función calcular, si no se ha introducido lanzo un mensaje.
                 numerointroducido =findViewById(R.id.editTextNumberDecimal);
                 final Editable textScrito=numerointroducido.getText() ;
                 if(textScrito.toString().equals("")){
@@ -93,6 +95,7 @@ public class Pantalla_2 extends AppCompatActivity {
             }
         });
     }
+    /*La funcion calcular:se genera un caso generico para todos excepto para el caso temperatura*/
     public double Calcular(long position,Double dato_introducido,String message){
         double resultado = 0;
         switch (calculo) {
