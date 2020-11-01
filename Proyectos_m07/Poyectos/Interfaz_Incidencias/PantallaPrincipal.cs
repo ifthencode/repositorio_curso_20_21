@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,23 @@ namespace Interfaz_Incidencias
 {
     public partial class Incidencias : Form
     {
+
+        String[] filtroIncidencia = {
+            "Elegir el filtro...",
+            "Tipo",
+            "Email",
+            "Estado",
+            "Fecha Apertura",
+            "Fecha Cierre"
+            };
+        ListView lvFiltrado;
+        
+
         public Incidencias()
         {
             InitializeComponent();
+          
+           // view.Filter = UserFilter;
         }
 
         private void Incidencias_Load(object sender, EventArgs e)
@@ -32,8 +47,8 @@ namespace Interfaz_Incidencias
         {
 
         }
-
-        private void nuevaIncidencia_Click(object sender, EventArgs e)
+        
+    private void nuevaIncidencia_Click(object sender, EventArgs e)
         {
             AgregadorIncidencias ai = new AgregadorIncidencias(lvIncidencias);
 
@@ -57,7 +72,24 @@ namespace Interfaz_Incidencias
         private void salirToolStripMenuItem_Click(object sender, EventArgs e) {
             this.Close();
         }
+        private void rellenar(ComboBox cb, String selected, String[] array)
+        {
+            cb.Items.Clear();
+            foreach (String s in array)
+            {
+                cb.Items.Add(s);
+            }
+            if (selected == null)
+                cb.SelectedIndex = 0;
+            else
+                cb.SelectedItem = selected;
+        }
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            rellenar(cbFiltro, null, filtroIncidencia);
+           
 
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             ModificarIncidencia mi;
@@ -116,6 +148,49 @@ namespace Interfaz_Incidencias
             }
             else {
                 MessageBox.Show("Debe seleccionar una incidencia ");
+
+            }
+        }
+
+        private void txFiltro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btFiltrar_Click(object sender, EventArgs e)
+        {
+            
+
+            if (!txFiltro.Text.Equals(""))
+            {
+                ListViewItem[] itemlist;
+                ListViewItem item = new ListViewItem();
+                FiltrarIncidencias fi;
+
+                foreach (ListViewItem iteml in lvIncidencias.Items)
+                {
+
+
+                    if (cbFiltro.SelectedItem.Equals("Tipo"))
+                    {
+
+                        if (iteml.SubItems[1].Text.Equals(txFiltro)) {
+                           lvFiltrado.Items.Insert(0,iteml);
+                        
+                        
+                        }
+
+
+                        fi = new FiltrarIncidencias(lvFiltrado);
+
+                    };
+                   
+                }
+               
+            }
+            else
+            {
+                MessageBox.Show("Debe escribir un filtro ");
 
             }
         }

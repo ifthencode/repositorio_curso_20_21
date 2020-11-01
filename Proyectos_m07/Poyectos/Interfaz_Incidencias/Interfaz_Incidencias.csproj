@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FiltrarIncidencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FiltrarIncidencias.Designer.cs">
+      <DependentUpon>FiltrarIncidencias.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModificarIncidencia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AgregadorIncidencias.resx">
       <DependentUpon>AgregadorIncidencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FiltrarIncidencias.resx">
+      <DependentUpon>FiltrarIncidencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarIncidencia.resx">
       <DependentUpon>ModificarIncidencia.cs</DependentUpon>

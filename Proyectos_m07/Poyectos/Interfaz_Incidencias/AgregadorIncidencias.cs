@@ -23,6 +23,7 @@ namespace Interfaz_Incidencias
             "En proceso",
             "Cerrada"
             };
+        
         ListView lista;
         public AgregadorIncidencias(ListView lv)
         {
