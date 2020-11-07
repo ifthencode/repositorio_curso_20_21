@@ -47,6 +47,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbFiltro = new System.Windows.Forms.ComboBox();
             this.txFiltro = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btFiltrar = new System.Windows.Forms.Button();
             this.lvIncidencias = new System.Windows.Forms.ListView();
             this.vacia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clTipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -65,8 +67,6 @@
             this.seleccionartodoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personalizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btFiltrar = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
@@ -143,7 +143,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.26559F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.73441F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 353F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 354F));
             this.tableLayoutPanel2.Controls.Add(this.nuevaIncidencia, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.modificarIncidencia, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.eliminarIncidencia, 2, 0);
@@ -162,7 +162,7 @@
             this.nuevaIncidencia.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nuevaIncidencia.Location = new System.Drawing.Point(3, 3);
             this.nuevaIncidencia.Name = "nuevaIncidencia";
-            this.nuevaIncidencia.Size = new System.Drawing.Size(338, 23);
+            this.nuevaIncidencia.Size = new System.Drawing.Size(337, 23);
             this.nuevaIncidencia.TabIndex = 0;
             this.nuevaIncidencia.Text = "Nueva Incidencia";
             this.nuevaIncidencia.UseVisualStyleBackColor = true;
@@ -174,7 +174,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.modificarIncidencia.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modificarIncidencia.Location = new System.Drawing.Point(347, 3);
+            this.modificarIncidencia.Location = new System.Drawing.Point(346, 3);
             this.modificarIncidencia.Name = "modificarIncidencia";
             this.modificarIncidencia.Size = new System.Drawing.Size(409, 23);
             this.modificarIncidencia.TabIndex = 1;
@@ -188,9 +188,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.eliminarIncidencia.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eliminarIncidencia.Location = new System.Drawing.Point(762, 3);
+            this.eliminarIncidencia.Location = new System.Drawing.Point(761, 3);
             this.eliminarIncidencia.Name = "eliminarIncidencia";
-            this.eliminarIncidencia.Size = new System.Drawing.Size(348, 23);
+            this.eliminarIncidencia.Size = new System.Drawing.Size(349, 23);
             this.eliminarIncidencia.TabIndex = 2;
             this.eliminarIncidencia.Text = "Eliminar Incidencia";
             this.eliminarIncidencia.UseVisualStyleBackColor = true;
@@ -202,7 +202,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.2525F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.7475F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 222F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 223F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 97);
@@ -219,9 +219,9 @@
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.67616F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 89.32384F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
             this.tableLayoutPanel3.Controls.Add(this.label1, 1, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(248, 33);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(247, 33);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.91304F));
@@ -235,7 +235,7 @@
             this.label1.AutoSize = true;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(200, 7);
+            this.label1.Location = new System.Drawing.Point(199, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(207, 25);
             this.label1.TabIndex = 0;
@@ -246,11 +246,11 @@
             this.tableLayoutPanel4.ColumnCount = 3;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.0519F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.9481F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 17F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 1, 1);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(248, 81);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(247, 81);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.79167F));
@@ -265,7 +265,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90.65934F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 158F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 182F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
             this.tableLayoutPanel5.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.cbFiltro, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.txFiltro, 3, 0);
@@ -292,18 +292,38 @@
             // cbFiltro
             // 
             this.cbFiltro.FormattingEnabled = true;
-            this.cbFiltro.Location = new System.Drawing.Point(96, 3);
+            this.cbFiltro.Location = new System.Drawing.Point(95, 3);
             this.cbFiltro.Name = "cbFiltro";
             this.cbFiltro.Size = new System.Drawing.Size(121, 21);
             this.cbFiltro.TabIndex = 1;
+            this.cbFiltro.SelectedIndexChanged += new System.EventHandler(this.cbFiltro_SelectedIndexChanged);
             // 
             // txFiltro
             // 
-            this.txFiltro.Location = new System.Drawing.Point(254, 3);
+            this.txFiltro.Location = new System.Drawing.Point(253, 3);
             this.txFiltro.Name = "txFiltro";
             this.txFiltro.Size = new System.Drawing.Size(174, 20);
             this.txFiltro.TabIndex = 2;
             this.txFiltro.TextChanged += new System.EventHandler(this.txFiltro_TextChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(2, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btFiltrar
+            // 
+            this.btFiltrar.Location = new System.Drawing.Point(435, 3);
+            this.btFiltrar.Name = "btFiltrar";
+            this.btFiltrar.Size = new System.Drawing.Size(75, 23);
+            this.btFiltrar.TabIndex = 4;
+            this.btFiltrar.Text = "Filtrar";
+            this.btFiltrar.UseVisualStyleBackColor = true;
+            this.btFiltrar.Click += new System.EventHandler(this.btFiltrar_Click);
             // 
             // lvIncidencias
             // 
@@ -440,25 +460,6 @@
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
             this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.opcionesToolStripMenuItem.Text = "&Opciones";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(2, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btFiltrar
-            // 
-            this.btFiltrar.Location = new System.Drawing.Point(436, 3);
-            this.btFiltrar.Name = "btFiltrar";
-            this.btFiltrar.Size = new System.Drawing.Size(75, 23);
-            this.btFiltrar.TabIndex = 4;
-            this.btFiltrar.Text = "Filtrar";
-            this.btFiltrar.UseVisualStyleBackColor = true;
-            this.btFiltrar.Click += new System.EventHandler(this.btFiltrar_Click);
             // 
             // Incidencias
             // 

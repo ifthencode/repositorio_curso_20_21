@@ -19,11 +19,11 @@ namespace Interfaz_Incidencias
             "Tipo",
             "Email",
             "Estado",
-            "Fecha Apertura",
-            "Fecha Cierre"
+           
             };
         ListView lvFiltrado;
-        
+        FiltrarIncidencias fi;
+        ListViewItem[] itemlist;
 
         public Incidencias()
         {
@@ -159,13 +159,14 @@ namespace Interfaz_Incidencias
 
         private void btFiltrar_Click(object sender, EventArgs e)
         {
-            
+           
 
             if (!txFiltro.Text.Equals(""))
             {
-                ListViewItem[] itemlist;
+                 itemlist = new ListViewItem[lvIncidencias.Items.Count];
                 ListViewItem item = new ListViewItem();
-                FiltrarIncidencias fi;
+                
+               
 
                 foreach (ListViewItem iteml in lvIncidencias.Items)
                 {
@@ -174,17 +175,38 @@ namespace Interfaz_Incidencias
                     if (cbFiltro.SelectedItem.Equals("Tipo"))
                     {
 
-                        if (iteml.SubItems[1].Text.Equals(txFiltro)) {
-                           lvFiltrado.Items.Insert(0,iteml);
-                        
-                        
+                        if (iteml.SubItems[1].Text.Equals(txFiltro.Text)) {
+                            int cont = 0;
+                            itemlist[cont] = iteml;
+                            
+
                         }
 
 
-                        fi = new FiltrarIncidencias(lvFiltrado);
 
-                    };
-                   
+                    }else if (cbFiltro.SelectedItem.Equals("Email")){
+
+                        if (iteml.SubItems[3].Text.Equals(txFiltro.Text))
+                        {
+                            int cont = 0;
+                            itemlist[cont] = iteml;
+
+
+                        }
+
+
+                    } else if (cbFiltro.SelectedItem.Equals("Estado")){
+                        if (iteml.SubItems[4].Text.Equals(txFiltro.Text))
+                        {
+                            int cont = 0;
+                            itemlist[cont] = iteml;
+
+
+                        }
+
+
+                    }
+
                 }
                
             }
@@ -193,6 +215,15 @@ namespace Interfaz_Incidencias
                 MessageBox.Show("Debe escribir un filtro ");
 
             }
+            fi = new FiltrarIncidencias(itemlist);
+            fi.Show();
+
+
+        }
+
+        private void cbFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
